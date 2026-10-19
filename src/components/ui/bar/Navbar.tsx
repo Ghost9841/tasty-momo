@@ -4,6 +4,8 @@ import { Utensils } from 'lucide-react'
 
 const Navbar = () => {
     return (
+        <nav className="">
+
         <header className="bg-white mt-8">
             <div className="flex justify-between items-center p-4 max-w-7xl mx-auto">
                 <div className="flex gap-4 text-2xl font-bold">
@@ -21,7 +23,7 @@ const Navbar = () => {
                 <Button variant="outline" className="mr-4 rounded-bl-none rounded-tr-none p-6 shadow-sm">Book a table</Button>
             </div>
         </header>
-
+        </nav>
     )
 }
 
