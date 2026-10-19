@@ -4,8 +4,8 @@ import { Utensils } from 'lucide-react'
 
 const Navbar = () => {
     return (
-        <header>
-            <div className="flex justify-between items-center p-4 bg-gray-100 max-w-7xl mx-auto">
+        <header className="bg-white mt-8">
+            <div className="flex justify-between items-center p-4 max-w-7xl mx-auto">
                 <div className="flex gap-4 text-2xl font-bold">
                     <span><Utensils /></span>
                     Logo</div>
