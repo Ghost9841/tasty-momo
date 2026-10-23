@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { Gelasio, Inter } from 'next/font/google'
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa'
+import { Button } from '@/components/ui/button'
 
 // Serif for headline + buttons, clean sans for body copy
 const serif = Gelasio({ subsets: ['latin'], weight: ['500', '600', '700'] })
@@ -72,18 +73,17 @@ const HeroSection = () => {
 
           {/* Buttons: soft coloured shadows are what give them the "floating" look */}
           <div className="mt-10 flex flex-wrap gap-4">
-            <a
-              href="#menu"
-              className={`${serif.className} rounded-lg bg-[#121b2b] px-8 py-3.5 text-sm font-medium text-white shadow-[0_14px_24px_-8px_rgba(18,27,43,0.45)] transition hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#121b2b]`}
+            <Button
+                        className="bg-[#121b2b] text-white shadow-lg shadow-[#121b2b]/20 hover:bg-[#121b2b]/90"
+
             >
               Menu
-            </a>
-            <a
-              href="#booking"
-              className={`${serif.className} rounded-lg bg-[#ee7125] px-8 py-3.5 text-sm font-medium text-white shadow-[0_14px_24px_-8px_rgba(238,113,37,0.55)] transition hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ee7125]`}
+            </Button>
+            <Button
+            className="bg-[#ee7125] text-white shadow-lg shadow-[#ee7125]/20 hover:bg-[#ee7125]/90"
             >
               Book a table
-            </a>
+            </Button>
           </div>
 
           {/* Socials + trailing line */}
