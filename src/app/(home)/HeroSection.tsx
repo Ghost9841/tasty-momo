@@ -25,7 +25,7 @@ const HeroSection = () => {
       {/* Thin decorative arcs, top-left */}
       <svg
         aria-hidden
-        className="pointer-events-none absolute -left-40 -top-72 -z-10 h-[640px] w-[640px] text-gray-300"
+        className="pointer-events-none absolute -left-40 -top-100 -z-10 h-[640px] w-[640px] text-gray-300"
         viewBox="0 0 640 640"
         fill="none"
         stroke="currentColor"
@@ -43,7 +43,7 @@ const HeroSection = () => {
           <motion.svg
             aria-hidden
             viewBox="0 0 100 100"
-            className="mb-16 h-24 w-24 text-[#121b2b]"
+            className="mb-4 h-24 w-24 text-[#121b2b]"
             animate={{ rotate: 360 }}
             transition={{ repeat: Infinity, duration: 24, ease: 'linear' }}
           >
@@ -53,7 +53,7 @@ const HeroSection = () => {
                 d="M50,50 m-34,0 a34,34 0 1,1 68,0 a34,34 0 1,1 -68,0"
               />
             </defs>
-            <text fontSize="10" fontWeight="600" letterSpacing="5" fill="currentColor">
+            <text fontSize="16" fontWeight="600" letterSpacing="5" fill="currentColor">
               <textPath href="#badge-circle">FOODSDELICIOSE</textPath>
             </text>
           </motion.svg>
@@ -106,7 +106,7 @@ const HeroSection = () => {
         <div className="relative mx-auto w-full max-w-md lg:max-w-none">
           {/* Botanical sketches sit BEHIND the photo (low z-index, pale grey) */}
           <Image
-            src="/herb-top.png"
+            src="/landingpage/fern.png"
             alt=""
             aria-hidden
             width={260}
@@ -114,7 +114,7 @@ const HeroSection = () => {
             className="pointer-events-none absolute -top-16 left-0 -z-10 opacity-60"
           />
           <Image
-            src="/leaf-top-right.png"
+            src="/landingpage/clover-leaf-2.png"
             alt=""
             aria-hidden
             width={200}
@@ -122,7 +122,7 @@ const HeroSection = () => {
             className="pointer-events-none absolute -right-10 -top-20 -z-10 opacity-60"
           />
           <Image
-            src="/herb-bottom-right.png"
+            src="/landingpage/fern-2.png"
             alt=""
             aria-hidden
             width={220}
@@ -131,9 +131,9 @@ const HeroSection = () => {
           />
 
           {/* Photo with uneven corners: small on the left, big sweep bottom-right */}
-          <div className="relative ml-auto aspect-[4/5] w-[78%] overflow-hidden rounded-tl-[44px] rounded-tr-[44px] rounded-br-[100px] rounded-bl-[24px] bg-black">
+          <div className="relative ml-auto aspect-[4/5] w-[78%] overflow-hidden rounded-tl-[100px] rounded-tr-[24px] rounded-br-[100px] rounded-bl-[24px] bg-black">
             <Image
-              src="/restaurant.jpg"
+              src="/landingpage/restaurant.png"
               alt="Warmly lit restaurant interior with pendant lamps and wooden chairs"
               fill
               priority
@@ -145,11 +145,9 @@ const HeroSection = () => {
           {/* Plate overlaps the photo's bottom-left edge. Use a transparent PNG. */}
           <motion.div
             className="absolute -left-2 bottom-10 w-[52%] drop-shadow-[0_24px_30px_rgba(0,0,0,0.35)] sm:-left-6 lg:-left-10"
-            animate={{ rotate: 360 }}
-            transition={{ repeat: Infinity, duration: 40, ease: 'linear' }}
           >
             <Image
-              src="/FoodDeliciousTastyMomo.png"
+              src="/landingpage/dish-2-1.png"
               alt="Plate of fresh papaya salad"
               width={420}
               height={420}
