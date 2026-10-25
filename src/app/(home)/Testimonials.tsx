@@ -47,8 +47,8 @@ const Testimonials = () => {
       className={`${sans.className} relative isolate overflow-hidden bg-[#f3f5f4] pb-28 pt-20`}
     >
       {/* Fried-egg pan sketch, bleeding off the left edge */}
-      <Image src="/pan-sketch.png" alt="" aria-hidden width={380} height={460}
-        className="pointer-events-none absolute -left-24 top-6 -z-10 hidden opacity-60 md:block" />
+      <Image src="/landingpage/pan-sketch.png" alt="" aria-hidden width={600} height={240}
+        className="pointer-events-none absolute top-6 -z-10 hidden opacity-100 md:block" />
 
       <div className="mx-auto max-w-md px-6 text-center">
         <h2 className={`${serif.className} text-4xl font-semibold tracking-tight text-[#121b2b] md:text-5xl`}>
@@ -72,7 +72,7 @@ const Testimonials = () => {
         {testimonials.map((t) => (
           <figure
             key={t.id}
-            className="relative w-[min(560px,85vw)] shrink-0 snap-center rounded-tl-[44px] rounded-tr-[44px] rounded-br-[72px] rounded-bl-[16px] bg-white px-8 pb-10 pt-16 text-center shadow-[0_20px_40px_-24px_rgba(18,27,43,0.25)] sm:px-14"
+            className="relative w-[min(560px,85vw)] shrink-0 snap-center rounded-tl-[72px] rounded-tr-[16px] rounded-br-[72px] rounded-bl-[16px] bg-white px-8 pb-10 pt-16 text-center shadow-[0_20px_40px_-24px_rgba(18,27,43,0.25)] sm:px-14"
           >
             {/* Avatar + stars overlap the top edge */}
             <div className="absolute -top-8 left-1/2 flex -translate-x-1/2 flex-col items-center">

@@ -18,8 +18,10 @@ const ExpertChef = () => {
       id="chef"
       className={`${sans.className} relative isolate overflow-hidden bg-white py-24`}
     >
-      <Image src="/garlic.png" alt="" aria-hidden width={260} height={260}
-        className="pointer-events-none absolute -left-10 top-4 -z-10 hidden opacity-50 md:block" />
+      <Image src="/landingpage/garlic-2.png" alt="" aria-hidden width={119} height={124}
+        className="pointer-events-none absolute -left-10 top-4 -z-10 hidden opacity-100 md:block" />
+      <Image src="/landingpage/full-garlic.png" alt="" aria-hidden width={260} height={260}
+        className="pointer-events-none absolute left-30 top-4 -z-10 hidden opacity-100 md:block" />
 
       <div className="mx-auto grid max-w-6xl items-center gap-16 px-6 md:grid-cols-2 lg:px-12">
         {/* Copy */}
@@ -52,7 +54,7 @@ const ExpertChef = () => {
         <div className="relative mx-auto aspect-[4/5] w-full max-w-sm">
           <div className="absolute bottom-0 left-1/2 aspect-square w-[92%] -translate-x-1/2 rounded-full bg-gradient-to-br from-[#f58a2f] to-[#f0561f]" />
           <Image
-            src="/chef.png"
+            src="/landingpage/chef-1.png"
             alt="Smiling chef in a white uniform holding a plate of salad"
             fill
             sizes="(min-width: 768px) 24rem, 80vw"

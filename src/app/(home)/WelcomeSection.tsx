@@ -12,37 +12,39 @@ const WelcomeSection = () => {
       className={`${sans.className} relative isolate overflow-hidden bg-[#f3f5f4] py-24`}
     >
       {/* Faint sketches */}
-      <Image src="/parsley.png" alt="" aria-hidden width={220} height={140}
-        className="pointer-events-none absolute left-[42%] top-0 -z-10 hidden opacity-50 md:block" />
-      <Image src="/rosemary-side.png" alt="" aria-hidden width={240} height={300}
-        className="pointer-events-none absolute -right-10 top-1/2 -z-10 hidden -translate-y-1/2 opacity-50 md:block" />
-      <Image src="/garlic.png" alt="" aria-hidden width={120} height={120}
-        className="pointer-events-none absolute bottom-16 left-[52%] -z-10 hidden opacity-50 md:block" />
+      <Image src="/landingpage/clover-leaf-2.png" alt="" aria-hidden width={220} height={140}
+        className="pointer-events-none absolute left-[52%] top-10 -z-10 hidden opacity-100 md:block" />
+      <Image src="/landingpage/garlic-1.png" alt="" aria-hidden width={120} height={120}
+        className="pointer-events-none absolute left-[12%] top-0 -z-10 hidden opacity-100 md:block" />
+      <Image src="/landingpage/leaves.png" alt="" aria-hidden width={440} height={400}
+        className="pointer-events-none absolute -right-10 top-1/2 -z-10 hidden -translate-y-1/2 opacity-100 md:block" />
+      <Image src="/landingpage/garlic-3.png" alt="" aria-hidden width={120} height={120}
+        className="pointer-events-none absolute bottom-16 left-[52%] -z-10 hidden opacity-100 md:block" />
 
       <div className="mx-auto grid max-w-6xl items-center gap-16 px-6 md:grid-cols-2 lg:px-12">
         {/* Plate + basil leaves */}
-        <div className="relative mx-auto w-full max-w-md">
+        <div className="relative mx-auto w-full max-w-lg">
           <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ repeat: Infinity, duration: 60, ease: 'linear' }}
             className="drop-shadow-[0_24px_30px_rgba(0,0,0,0.3)]"
           >
             <Image
-              src="/FoodDeliciousTastyMomo.png"
+              src="/landingpage/dish-22.png"
               alt="Plate of fresh papaya salad"
               width={520}
               height={520}
-              className="h-auto w-full"
+              className="h-full w-full"
             />
           </motion.div>
 
           {/* Leaves are static so only the plate spins */}
-          <Image src="/basil-leaf.png" alt="" aria-hidden width={110} height={110}
+          <Image src="/landingpage/leaf-1.png" alt="" aria-hidden width={100} height={100}
             className="absolute -left-6 top-[18%] w-[22%] -rotate-12" />
-          <Image src="/basil-leaf.png" alt="" aria-hidden width={110} height={110}
-            className="absolute -top-2 right-[-4%] w-[26%] rotate-[40deg]" />
-          <Image src="/basil-leaf.png" alt="" aria-hidden width={110} height={110}
-            className="absolute -bottom-2 left-[8%] w-[28%] rotate-[160deg]" />
+          <Image src="/landingpage/leaf-3.png" alt="" aria-hidden width={110} height={110}
+            className="absolute -top-2 right-[-4%] w-[26%]" />
+          <Image src="/landingpage/leaf-2.png" alt="" aria-hidden width={100} height={100}
+            className="absolute -bottom-2 left-[8%] w-[28%]" />
+          <Image src="/landingpage/leaf-4.png" alt="" aria-hidden width={110} height={110}
+            className="absolute -bottom-2 left-[68%] w-[28%] rotate-[80deg]" />
         </div>
 
         {/* Copy */}

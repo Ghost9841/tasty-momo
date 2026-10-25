@@ -13,28 +13,28 @@ const dishes = [
     name: 'Lumpia with Sauce',
     description: 'Lorem ipsum dolor sit , consectetur adipiscing elit, sed do eiusmod tempor',
     price: 12,
-    image: '/images/dish1.png', // transparent PNG, cropped to the plate
+    image: '/landingpage/dish-1-1.png', // transparent PNG, cropped to the plate
   },
   {
     id: 2,
     name: 'Fish and Veggie',
     description: 'Lorem ipsum dolor sit , consectetur adipiscing elit, sed do eiusmod tempor',
     price: 12,
-    image: '/images/dish2.png',
+    image: '/landingpage/dish-2-1.png',
   },
   {
     id: 3,
     name: 'Tofu Chili',
     description: 'Lorem ipsum dolor sit , consectetur adipiscing elit, sed do eiusmod tempor',
     price: 12,
-    image: '/images/dish3.png',
+    image: '/landingpage/dish-5.png',
   },
   {
     id: 4,
     name: 'Egg and Cucumber',
     description: 'Lorem ipsum dolor sit , consectetur adipiscing elit, sed do eiusmod tempor',
     price: 12,
-    image: '/images/dish4.png',
+    image: '/landingpage/dish-4.png',
   },
 ]
 
@@ -45,44 +45,44 @@ const SpecialDishes = () => {
   return (
     <section
       id="special-dishes"
-      className={`${sans.className} relative isolate overflow-hidden bg-[#f3f5f4] py-20`}
+      className={`${sans.className} relative isolate overflow-hidden bg-[#f3f5f4] py-20 h-screen`}
     >
       {/* Faint botanical sketches behind everything */}
       <Image
-        src="/basil.png"
+        src="/landingpage/clover-leaf-2.png"
         alt=""
         aria-hidden
         width={300}
         height={220}
-        className="pointer-events-none absolute left-[12%] top-6 -z-10 hidden opacity-50 md:block"
+        className="pointer-events-none absolute left-[12%] top-6 -z-10 hidden opacity-100 md:block"
       />
       <Image
-        src="/rosemary.png"
+        src="/landingpage/leaf-grass.png"
         alt=""
         aria-hidden
         width={200}
         height={280}
-        className="pointer-events-none absolute right-[18%] top-0 -z-10 hidden opacity-50 md:block"
+        className="pointer-events-none absolute right-[18%] top-0 -z-10 hidden opacity-100 md:block"
       />
       <Image
-        src="/garlic.png"
+        src="/landingpage/full-garlic.png"
         alt=""
         aria-hidden
         width={200}
         height={150}
-        className="pointer-events-none absolute bottom-16 right-[8%] -z-10 hidden opacity-50 md:block"
+        className="pointer-events-none absolute bottom-16 right-[8%] -z-10 hidden opacity-100 md:block"
       />
       <Image
-        src="/parsley.png"
+        src="/landingpage/fern-2.png"
         alt=""
         aria-hidden
         width={220}
         height={140}
-        className="pointer-events-none absolute -bottom-6 left-1/2 -z-10 hidden -translate-x-1/2 opacity-50 md:block"
+        className="pointer-events-none absolute -bottom-6 left-1/2 -z-10 hidden -translate-x-1/2 opacity-60 md:block"
       />
 
       {/* Heading */}
-      <div className="mx-auto max-w-md px-6 text-center">
+      <div className="mx-auto max-w-lg px-6 text-center">
         <h2
           className={`${serif.className} text-4xl font-semibold tracking-tight text-[#121b2b] md:text-5xl`}
         >

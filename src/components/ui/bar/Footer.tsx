@@ -28,17 +28,17 @@ const Footer = () => {
   return (
     <footer
       id="contact"
-      className={`${sans.className} relative isolate overflow-hidden bg-white pt-20 text-[#121b2b]`}
+      className={`${sans.className} relative isolate overflow-hidden bg-gray-50 pt-20 text-[#121b2b] max-w-7xl mx-auto`}
     >
-      <Image src="/plate-sketch.png" alt="" aria-hidden width={340} height={340}
-        className="pointer-events-none absolute -bottom-10 left-[38%] -z-10 hidden opacity-40 md:block" />
+      <Image src="/landingpage/pan-sketch-1.png" alt="" aria-hidden width={990} height={340}
+        className="pointer-events-none absolute -bottom-10 left-[20%] -z-10 hidden opacity-100 md:block" />
 
-      <div className="mx-auto grid max-w-5xl gap-12 px-6 md:grid-cols-[1.6fr_1fr_1fr_1fr]">
+      <div className="grid gap-12 px-6 md:grid-cols-[1.6fr_1fr_1fr_1fr]">
         {/* Brand + opening hours */}
         <div>
           <a href="/" className={`${serif.className} flex items-center gap-2 text-xl font-bold`}>
             <Soup className="text-[#ee7125]" aria-hidden />
-            restaurant
+            Logo
           </a>
           <p className="mt-5 max-w-xs text-xs leading-6 text-slate-500">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor

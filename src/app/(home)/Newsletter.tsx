@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import { serif, sans } from '@/lib/fonts'
+import { Button } from '@/components/ui/button'
 
 const Newsletter = () => {
   const [email, setEmail] = useState('')
@@ -23,7 +24,7 @@ const Newsletter = () => {
     >
       <div className="relative isolate mx-auto max-w-5xl overflow-hidden rounded-3xl">
         <Image
-          src="/newsletter-bg.jpg"
+          src="/landingpage/cta-img-bg-1.png"
           alt=""
           aria-hidden
           fill
@@ -53,12 +54,12 @@ const Newsletter = () => {
               placeholder="Enter your email"
               className="min-w-0 flex-1 rounded-xl bg-transparent px-4 py-3 text-sm text-[#121b2b] placeholder:text-slate-400 focus:outline-none"
             />
-            <button
+            <Button
               type="submit"
-              className="rounded-xl bg-[#ee7125] px-7 py-3 text-sm font-semibold text-white transition hover:bg-[#d9631d] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ee7125]"
+              className=" bg-[#ee7125] text-white rounded-bl-none rounded-tr-none p-6 shadow-sm transition hover:bg-[#d9631d] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ee7125]"
             >
               Subscribe
-            </button>
+            </Button>
           </form>
 
           <p role="status" className="mt-4 h-5 text-sm text-white">

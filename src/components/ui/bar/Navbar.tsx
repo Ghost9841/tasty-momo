@@ -20,7 +20,7 @@ const Navbar = () => {
                         <li>Contact</li>
                     </ul>
                 </div>
-                <Button variant="outline" className="mr-4 rounded-bl-none rounded-tr-none p-6 shadow-sm">Book a table</Button>
+                <Button variant="outline" className="mr-4 bg-[#ee7125] text-white rounded-bl-none rounded-tr-none p-6 shadow-sm">Book a table</Button>
             </div>
         </header>
         </nav>

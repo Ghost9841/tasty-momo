@@ -74,13 +74,13 @@ const HeroSection = () => {
           {/* Buttons: soft coloured shadows are what give them the "floating" look */}
           <div className="mt-10 flex flex-wrap gap-4">
             <Button
-                        className="bg-[#121b2b] text-white shadow-lg shadow-[#121b2b]/20 hover:bg-[#121b2b]/90"
+              className="bg-[#121b2b] text-white shadow-lg shadow-[#121b2b]/20 hover:bg-[#121b2b]/90"
 
             >
               Menu
             </Button>
             <Button
-            className="bg-[#ee7125] text-white shadow-lg shadow-[#ee7125]/20 hover:bg-[#ee7125]/90"
+              className="bg-[#ee7125] text-white shadow-lg shadow-[#ee7125]/20 hover:bg-[#ee7125]/90"
             >
               Book a table
             </Button>
@@ -111,15 +111,15 @@ const HeroSection = () => {
             aria-hidden
             width={260}
             height={200}
-            className="pointer-events-none absolute -top-16 left-0 -z-10 opacity-60"
+            className="pointer-events-none absolute -top-16 left-0 -z-10 opacity-100"
           />
           <Image
-            src="/landingpage/clover-leaf-2.png"
+            src="/landingpage/cloverleaf.png"
             alt=""
             aria-hidden
             width={200}
             height={260}
-            className="pointer-events-none absolute -right-10 -top-20 -z-10 opacity-60"
+            className="pointer-events-none absolute -right-20 -top-20 -z-10 opacity-100"
           />
           <Image
             src="/landingpage/fern-2.png"
@@ -127,7 +127,7 @@ const HeroSection = () => {
             aria-hidden
             width={220}
             height={300}
-            className="pointer-events-none absolute -right-14 bottom-16 -z-10 opacity-60"
+            className="pointer-events-none absolute -right-44 bottom-16 -z-10 opacity-100"
           />
 
           {/* Photo with uneven corners: small on the left, big sweep bottom-right */}
