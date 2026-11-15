@@ -99,7 +99,7 @@ const Footer = () => {
       {/* Bottom bar */}
       <div className="mx-auto mt-14 max-w-5xl border-t border-gray-200 px-6 py-6">
         <div className="flex flex-col items-center justify-between gap-3 text-xs text-slate-500 sm:flex-row">
-          <p>© {new Date().getFullYear()} Restaurant. All Right Reserved.</p>
+          <p>© 2026 Restaurant. All Right Reserved.</p>
           <div className="flex gap-8">
             <a href="#" className="hover:text-[#121b2b]">Terms of Service</a>
             <a href="#" className="hover:text-[#121b2b]">Privacy Policy</a>
