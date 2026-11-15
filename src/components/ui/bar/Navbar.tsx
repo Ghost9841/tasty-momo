@@ -1,6 +1,7 @@
 import React from 'react'
 import { Button } from '../button'
 import { Utensils } from 'lucide-react'
+import CustomLink from './CustomLink'
 
 const Navbar = () => {
     return (
@@ -13,11 +14,11 @@ const Navbar = () => {
                     Logo</div>
                 <div className="flex items-center p-4">
                     <ul className='flex gap-8'>
-                        <li>Menu</li>
-                        <li>Events</li>
-                        <li>Gallery</li>
-                        <li>About</li>
-                        <li>Contact</li>
+                       <CustomLink href="/menu" title="Menu" />
+                       <CustomLink href="/events" title="Events" />
+                       <CustomLink href="/gallery" title="Gallery" />
+                       <CustomLink href="/about" title="About" />
+                       <CustomLink href="/contact" title="Contact" />
                     </ul>
                 </div>
                 <Button variant="outline" className="mr-4 bg-[#ee7125] text-white rounded-bl-none rounded-tr-none p-6 shadow-sm">Book a table</Button>
