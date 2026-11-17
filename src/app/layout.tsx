@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { SmoothCursor } from "@/components/ui/smooth-cursor";
 import SmoothScroll from "@/components/ui/SmoothScrool";
+import Navbar from "@/components/ui/bar/Navbar";
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
 
@@ -31,6 +32,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="min-h-full flex flex-col cursor-none">
         <SmoothCursor />
         <SmoothScroll>
+          <Navbar/>
           {children}
         </SmoothScroll>
       </body>
