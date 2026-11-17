@@ -53,7 +53,7 @@ export default function ThumbnailRail({
           aria-label={`${d.line1} ${d.line2}`}
           aria-current={i === active}
           data-active={i === active}
-          className="flex flex-col items-center rounded-xl outline-none transition-colors focus-visible:ring-2 focus-visible:ring-neutral-800 data-[active=true]:bg-white/70 data-[active=true]:shadow-sm"
+          className="flex flex-col items-center rounded-2xl rounded-bl-none rounded-tr-none px-4 py-2 outline-none transition-colors focus-visible:ring-2 focus-visible:ring-neutral-800 data-[active=true]:bg-white/70 data-[active=true]:shadow-sm"
           style={{ width: "7.2cqw", padding: "0.6cqw 0" }}
         >
           <span className="relative block" style={{ width: "3cqw", height: "3cqw" }}>
