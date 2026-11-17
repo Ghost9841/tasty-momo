@@ -20,7 +20,7 @@ export default function InfoMenucard({ dish }: { dish: Dish }) {
               <TabsTrigger
                 key={t}
                 value={t}
-                className="rounded-none border-b-2 border-transparent px-0 py-0.5 capitalize shadow-none data-[state=active]:border-neutral-800 data-[state=active]:bg-transparent data-[state=active]:shadow-none"
+                className="rounded-2xl rounded-bl-none rounded-tr-none border-b-2 border-transparent px-2 py-4 capitalize shadow-none data-[state=active]:border-neutral-800 data-[state=active]:bg-transparent data-[state=active]:shadow-none"
                 style={{ fontSize: "0.95cqw" }}
               >
                 {t}
