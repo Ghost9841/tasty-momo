@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { Gelasio, Inter } from 'next/font/google'
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa'
 import { Button } from '@/components/ui/button'
+import { Reveal, MaskText, ease } from '@/lib/motion'
 
 // Serif for headline + buttons, clean sans for body copy
 const serif = Gelasio({ subsets: ['latin'], weight: ['500', '600', '700'] })
@@ -22,7 +23,7 @@ const HeroSection = () => {
       id="hero"
       className={`${sans.className} relative isolate overflow-hidden bg-white`}
     >
-      {/* Thin decorative arcs, top-left */}
+      {/* Thin decorative arcs, top-left: they draw themselves in */}
       <svg
         aria-hidden
         className="pointer-events-none absolute -left-40 -top-100 -z-10 h-[640px] w-[640px] text-gray-300"
@@ -31,63 +32,70 @@ const HeroSection = () => {
         stroke="currentColor"
         strokeWidth="1"
       >
-        <circle cx="320" cy="320" r="300" />
-        <circle cx="320" cy="320" r="360" />
-        <circle cx="320" cy="320" r="420" />
+        {[300, 360, 420].map((r, i) => (
+          <motion.circle
+            key={r}
+            cx="320"
+            cy="320"
+            r={r}
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={{ pathLength: 1, opacity: 1 }}
+            transition={{ duration: 2.4, ease, delay: i * 0.25 }}
+          />
+        ))}
       </svg>
 
       <div className="mx-auto grid max-w-7xl items-center gap-16 px-6 py-20 lg:grid-cols-2 lg:px-12 lg:py-28">
         {/* ───────── LEFT: copy ───────── */}
         <div className="relative">
           {/* Circular rotating badge */}
-          <motion.svg
-            aria-hidden
-            viewBox="0 0 100 100"
-            className="mb-4 h-24 w-24 text-[#121b2b]"
-            animate={{ rotate: 360 }}
-            transition={{ repeat: Infinity, duration: 24, ease: 'linear' }}
-          >
-            <defs>
-              <path
-                id="badge-circle"
-                d="M50,50 m-34,0 a34,34 0 1,1 68,0 a34,34 0 1,1 -68,0"
-              />
-            </defs>
-            <text fontSize="16" fontWeight="600" letterSpacing="5" fill="currentColor">
-              <textPath href="#badge-circle">FOODSDELICIOSE</textPath>
-            </text>
-          </motion.svg>
+          <Reveal immediate from="scale" className="w-fit">
+            <motion.svg
+              aria-hidden
+              viewBox="0 0 100 100"
+              className="mb-4 h-24 w-24 text-[#121b2b]"
+              animate={{ rotate: 360 }}
+              transition={{ repeat: Infinity, duration: 24, ease: 'linear' }}
+            >
+              <defs>
+                <path
+                  id="badge-circle"
+                  d="M50,50 m-34,0 a34,34 0 1,1 68,0 a34,34 0 1,1 -68,0"
+                />
+              </defs>
+              <text fontSize="16" fontWeight="600" letterSpacing="5" fill="currentColor">
+                <textPath href="#badge-circle">FOODSDELICIOSE</textPath>
+              </text>
+            </motion.svg>
+          </Reveal>
 
-          <h1
+          <MaskText
+            as="h1"
+            immediate
+            delay={0.2}
+            lines={['We provide the', 'best food for you']}
             className={`${serif.className} text-5xl font-semibold leading-[1.1] tracking-tight text-[#121b2b] md:text-6xl`}
-          >
-            We provide the
-            <br />
-            best food for you
-          </h1>
+          />
 
-          <p className="mt-12 max-w-sm text-sm leading-7 text-slate-500">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </p>
+          <Reveal immediate delay={0.7}>
+            <p className="mt-12 max-w-sm text-sm leading-7 text-slate-500">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </Reveal>
 
           {/* Buttons: soft coloured shadows are what give them the "floating" look */}
-          <div className="mt-10 flex flex-wrap gap-4">
-            <Button
-              className="bg-[#121b2b] text-white shadow-lg shadow-[#121b2b]/20 hover:bg-[#121b2b]/90"
-
-            >
+          <Reveal immediate delay={0.9} className="mt-10 flex flex-wrap gap-4">
+            <Button className="bg-[#121b2b] text-white shadow-lg shadow-[#121b2b]/20 hover:bg-[#121b2b]/90">
               Menu
             </Button>
-            <Button
-              className="bg-[#ee7125] text-white shadow-lg shadow-[#ee7125]/20 hover:bg-[#ee7125]/90"
-            >
+            <Button className="bg-[#ee7125] text-white shadow-lg shadow-[#ee7125]/20 hover:bg-[#ee7125]/90">
               Book a table
             </Button>
-          </div>
+          </Reveal>
 
           {/* Socials + trailing line */}
-          <div className="mt-16 flex items-center gap-3">
+          <Reveal immediate delay={1.1} className="mt-16 flex items-center gap-3">
             {socials.map(({ label, Icon, href }) => (
               <a
                 key={label}
@@ -98,61 +106,89 @@ const HeroSection = () => {
                 <Icon size={16} />
               </a>
             ))}
-            <span className="ml-3 h-px w-24 bg-gray-300" />
-          </div>
+            <motion.span
+              className="ml-3 h-px w-24 origin-left bg-gray-300"
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 1, ease, delay: 1.5 }}
+            />
+          </Reveal>
         </div>
 
         {/* ───────── RIGHT: imagery ───────── */}
         <div className="relative mx-auto w-full max-w-md lg:max-w-none">
           {/* Botanical sketches sit BEHIND the photo (low z-index, pale grey) */}
-          <Image
-            src="/landingpage/fern.png"
-            alt=""
-            aria-hidden
-            width={260}
-            height={200}
-            className="pointer-events-none absolute -top-16 left-0 -z-10 opacity-100"
-          />
-          <Image
-            src="/landingpage/cloverleaf.png"
-            alt=""
-            aria-hidden
-            width={200}
-            height={260}
-            className="pointer-events-none absolute -right-20 -top-20 -z-10 opacity-100"
-          />
-          <Image
-            src="/landingpage/fern-2.png"
-            alt=""
-            aria-hidden
-            width={220}
-            height={300}
-            className="pointer-events-none absolute -right-44 bottom-16 -z-10 opacity-100"
-          />
+          <Reveal
+            immediate
+            from="scale"
+            duration={1.4}
+            delay={0.4}
+            className="pointer-events-none absolute -top-16 left-0 -z-10"
+          >
+            <Image src="/landingpage/fern.png" alt="" aria-hidden width={260} height={200} />
+          </Reveal>
+          <Reveal
+            immediate
+            from="scale"
+            duration={1.4}
+            delay={0.6}
+            className="pointer-events-none absolute -right-20 -top-20 -z-10"
+          >
+            <Image src="/landingpage/cloverleaf.png" alt="" aria-hidden width={200} height={260} />
+          </Reveal>
+          <Reveal
+            immediate
+            from="scale"
+            duration={1.4}
+            delay={0.8}
+            className="pointer-events-none absolute -right-44 bottom-16 -z-10"
+          >
+            <Image src="/landingpage/fern-2.png" alt="" aria-hidden width={220} height={300} />
+          </Reveal>
 
-          {/* Photo with uneven corners: small on the left, big sweep bottom-right */}
-          <div className="relative ml-auto aspect-[4/5] w-[78%] overflow-hidden rounded-tl-[100px] rounded-tr-[24px] rounded-br-[100px] rounded-bl-[24px] bg-black">
-            <Image
-              src="/landingpage/restaurant.png"
-              alt="Warmly lit restaurant interior with pendant lamps and wooden chairs"
-              fill
-              priority
-              sizes="(min-width: 1024px) 40vw, 80vw"
-              className="object-cover"
-            />
-          </div>
+          {/* Photo with uneven corners: rises in while the image inside settles from a zoom */}
+          <motion.div
+            className="relative ml-auto aspect-[4/5] w-[78%] overflow-hidden rounded-tl-[100px] rounded-tr-[24px] rounded-br-[100px] rounded-bl-[24px] bg-black"
+            initial={{ opacity: 0, y: 60 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.1, ease, delay: 0.3 }}
+          >
+            <motion.div
+              className="absolute inset-0"
+              initial={{ scale: 1.25 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 1.8, ease, delay: 0.3 }}
+            >
+              <Image
+                src="/landingpage/restaurant.png"
+                alt="Warmly lit restaurant interior with pendant lamps and wooden chairs"
+                fill
+                priority
+                sizes="(min-width: 1024px) 40vw, 80vw"
+                className="object-cover"
+              />
+            </motion.div>
+          </motion.div>
 
-          {/* Plate overlaps the photo's bottom-left edge. Use a transparent PNG. */}
+          {/* Plate swings in from the left, then floats gently. Use a transparent PNG. */}
           <motion.div
             className="absolute -left-2 bottom-10 w-[52%] drop-shadow-[0_24px_30px_rgba(0,0,0,0.35)] sm:-left-6 lg:-left-10"
+            initial={{ opacity: 0, x: -80, rotate: -30 }}
+            animate={{ opacity: 1, x: 0, rotate: 0 }}
+            transition={{ duration: 1.2, ease, delay: 0.8 }}
           >
-            <Image
-              src="/landingpage/dish-2-1.png"
-              alt="Plate of fresh papaya salad"
-              width={420}
-              height={420}
-              className="h-auto w-full"
-            />
+            <motion.div
+              animate={{ y: [0, -12, 0] }}
+              transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 2 }}
+            >
+              <Image
+                src="/landingpage/dish-2-1.png"
+                alt="Plate of fresh papaya salad"
+                width={420}
+                height={420}
+                className="h-auto w-full"
+              />
+            </motion.div>
           </motion.div>
         </div>
       </div>

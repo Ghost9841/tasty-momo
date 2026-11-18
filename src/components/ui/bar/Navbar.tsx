@@ -1,4 +1,3 @@
-
 'use client'
 
 import { Button } from '../button'
@@ -58,7 +57,7 @@ const linkVariants = {
 const Navbar = () => {
     return (
         <nav className="px-4">
-            <header className="bg-white mt-4 md:mt-8 rounded-lg shadow-sm">
+            <header className="bg-white mt-4 md:mt-8 rounded-lg">
                 <div className="flex justify-between items-center p-4 max-w-7xl mx-auto">
 
                     {/* Logo */}

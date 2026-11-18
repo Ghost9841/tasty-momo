@@ -71,7 +71,7 @@ function CategoryNav({
     >
       <div
         ref={barRef}
-        className="relative mx-auto flex max-w-7xl gap-1 overflow-x-auto px-4 py-3 [scrollbar-width:none]"
+        className="relative mx-auto flex max-w-7xl gap-1 overflow-x-auto px-4 py-3 scrollbar-none"
       >
         {MENU.map((s) => {
           const isActive = s.id === active;
@@ -206,7 +206,7 @@ function MenuSection({ section, index }: { section: Section; index: number }) {
     >
       <motion.div
         aria-hidden
-        className="pointer-events-none absolute -right-48 top-8 size-[30rem] rounded-full border-[5rem] opacity-20"
+        className="pointer-events-none absolute -right-48 top-8 size-120 rounded-full border-[5rem] opacity-20"
         style={{ y: ringY, borderColor: accent }}
       />
 
