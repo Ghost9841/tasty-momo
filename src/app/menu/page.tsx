@@ -6,6 +6,7 @@ export default function MenuPage() {
     <main>
       <MomoShowcase />
       {/* more sections go here */}
+      <section className="h-[150vh] bg-white p-10">Next section</section>
     </main>
   );
 }

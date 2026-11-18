@@ -3,7 +3,7 @@ import { Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { SmoothCursor } from "@/components/ui/smooth-cursor";
-import SmoothScroll from "@/components/ui/SmoothScrool";
+import SmoothScroll from "@/components/ui/SmoothScroll";
 import Navbar from "@/components/ui/bar/Navbar";
 
 const inter = Inter({ subsets: ['latin'], variable: '--font-sans' });
@@ -29,10 +29,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-sans", inter.variable)}
     >
-      <body className="min-h-full flex flex-col cursor-none">
+      <body className="min-h-svh flex flex-col cursor-none">
+          <Navbar/>
         <SmoothCursor />
         <SmoothScroll>
-          <Navbar/>
           {children}
         </SmoothScroll>
       </body>
