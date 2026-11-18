@@ -4,7 +4,8 @@ import type { KeyboardEvent } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import type { Dish } from "./dataMomo";
+import { Dish } from "./dataMomo";
+
 
 type Props = {
   dishes: Dish[];

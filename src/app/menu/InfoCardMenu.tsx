@@ -16,7 +16,7 @@ export default function InfoMenucard({ dish }: { dish: Dish }) {
       <CardContent style={{ padding: "1.8cqw" }}>
         <Tabs defaultValue="overview">
           <TabsList className="ml-auto flex h-auto w-fit gap-4 bg-transparent p-0">
-            {["overview", "ingredients"].map((t) => (
+            {["overview", "details"].map((t) => (
               <TabsTrigger
                 key={t}
                 value={t}
@@ -39,19 +39,16 @@ export default function InfoMenucard({ dish }: { dish: Dish }) {
               <div className="flex items-center gap-3">
                 <motion.div
                   className="grid place-items-center rounded-2xl font-bold text-white"
-                  style={{ width: "5.2cqw", height: "5.2cqw", fontSize: "2cqw" }}
+                  style={{ minWidth: "5.2cqw", height: "5.2cqw", padding: "0 1.1cqw", fontSize: "1.7cqw" }}
                   initial={false}
                   animate={{ backgroundColor: dish.accent }}
                   transition={{ duration: 0.8 }}
                 >
-                  {dish.rating}
+                  {dish.price}
                 </motion.div>
                 <div>
                   <p className="font-semibold" style={{ fontSize: "1.2cqw" }}>
-                    {dish.chef}
-                  </p>
-                  <p className="text-muted-foreground" style={{ fontSize: "0.95cqw" }}>
-                    {dish.price} per plate
+                    {dish.tagline}
                   </p>
                 </div>
               </div>
@@ -64,12 +61,12 @@ export default function InfoMenucard({ dish }: { dish: Dish }) {
                   {dish.blurb}
                 </p>
               </TabsContent>
-              <TabsContent value="ingredients" className="mt-3">
+              <TabsContent value="details" className="mt-3">
                 <ul
                   className="flex flex-wrap gap-1.5 text-muted-foreground"
                   style={{ fontSize: "1cqw" }}
                 >
-                  {dish.ingredients.map((x) => (
+                  {dish.details.map((x) => (
                     <li key={x} className="rounded-full bg-black/5 px-2.5 py-0.5">
                       {x}
                     </li>
